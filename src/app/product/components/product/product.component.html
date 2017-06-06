@@ -1,0 +1,12 @@
+<h4 class="list-group-item-heading">
+  {{ product.name }}
+
+  <span class="label label-default">${{ product.price }}</span>
+</h4>
+
+<p class="list-group-item-text">{{ product.description }}</p>
+<div *ngIf="product.tags">
+  <span class="label label-primary" *ngFor="let tag of product.tags">
+    <app-product-tag [tag]="tag"></app-product-tag>
+  </span>
+</div>

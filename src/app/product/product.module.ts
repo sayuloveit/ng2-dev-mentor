@@ -2,6 +2,8 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 import { ProductListComponent } from './components/product-list/product-list.component';
+import { ProductComponent } from './components/product/product.component';
+import { ProductTagComponent } from './components/product-tag/product-tag.component';
 
 
 @NgModule({
@@ -9,10 +11,12 @@ import { ProductListComponent } from './components/product-list/product-list.com
     CommonModule
   ],
   declarations: [
-    ProductListComponent
+    ProductListComponent,
+    ProductComponent,
+    ProductTagComponent
   ],
   exports: [
-    ProductListComponent
+    ProductListComponent,
   ]
 })
 export class ProductModule { }

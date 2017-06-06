@@ -11,7 +11,8 @@ export class ProductListComponent {
     {
       name: 'JavaScript: The Definitive Guide',
       description: `Since 1996, JavaScript: The Definitive Guide has been the bible for JavaScript programmers—a programmer's guide and comprehensive reference to the core language and to the client-side JavaScript APIs defined by web browsers.`,
-      price: 28.89
+      price: 28.89,
+      tags: ['js', 'paperback', 'pdf', 'eBook']
     },
     {
       name: 'Eloquent JavaScript: A Modern Introduction to Programming',

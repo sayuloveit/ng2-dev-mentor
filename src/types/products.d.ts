@@ -3,4 +3,5 @@ interface IProduct {
     description: string;
     price: number;
     promoted?: boolean;
+    tags?: string[];
 }
