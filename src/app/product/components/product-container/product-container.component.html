@@ -8,5 +8,5 @@
       (sortChange)="onSort($event)">
   </app-product-sort>
 
-  <app-product-list [products]="products"></app-product-list>
+  <app-product-list [products]="products | filterProducts:predicate | sortProducts:sort"></app-product-list>
 </div>

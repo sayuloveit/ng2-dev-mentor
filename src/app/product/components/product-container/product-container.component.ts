@@ -28,11 +28,12 @@ export class ProductContainerComponent implements OnInit {
     }
   ];
 
-  public products: IProduct[];
+  public products: IProduct[] = this.allProducts.slice();
   public sort: ISort = {
     property: 'price',
     reverse: false
   };
+  public predicate = '';
 
   constructor() {}
 
@@ -41,35 +42,13 @@ export class ProductContainerComponent implements OnInit {
   }
 
   onFilter(predicate: string = ''): void {
-    this.products = this.sortItems(this.filterItems(this.allProducts, predicate), this.sort);
+    this.predicate = predicate;
   }
 
   onSort(sortBy: string) {
-    this.sort.reverse = !this.sort.reverse;
-    this.sort.property = sortBy;
-
-    this.products = this.sortItems(this.products, this.sort);
-  }
-
-  private filterItems(items: IProduct[], predicate: string): IProduct[] {
-    return items.filter(item => {
-      const values = Object.keys(item).map(key => item[key])
-        .map(String)
-        .map(val => val.toLowerCase());
-
-
-      return values.some(value => value.includes(predicate.toLowerCase()));
-    });
-  }
-
-  private sortItems(items: IProduct[], sort: ISort): IProduct[] {
-
-    const sortedItems = _.sortBy(items, sort.property);
-
-    if (sort.reverse) {
-      sortedItems.reverse();
+    this.sort = {
+      reverse: !this.sort.reverse,
+      property: sortBy
     }
-
-    return sortedItems;
   }
 }
