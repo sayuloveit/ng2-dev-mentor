@@ -1,0 +1,12 @@
+<div class="container">
+
+  <app-product-search (search)="onFilter($event)"></app-product-search>
+
+  <app-product-sort *ngFor="let sortProperty of ['price', 'name']"
+      [property]="sortProperty" 
+      [sort]="sort"
+      (sortChange)="onSort($event)">
+  </app-product-sort>
+
+  <app-product-list [products]="products"></app-product-list>
+</div>

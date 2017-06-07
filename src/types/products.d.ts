@@ -5,3 +5,8 @@ interface IProduct {
     promoted?: boolean;
     tags?: string[];
 }
+
+interface ISort {
+  property: string;
+  reverse: boolean;
+}

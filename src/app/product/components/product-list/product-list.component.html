@@ -1,17 +1,5 @@
-<div class="container">
-
-  <h2>Promoted items</h2>
-  <div class="list-group">
-    <div class="list-group-item" *ngFor="let product of promotedProducts">
-      <app-product [product]=product></app-product>
-    </div>
+<div class="list-group">
+  <div class="list-group-item" *ngFor="let product of products">
+    <app-product [product]="product"></app-product>
   </div>
-
-  <h2>Regular items</h2>
-  <div class="list-group">
-    <div class="list-group-item" *ngFor="let product of regularProducts">
-       <app-product [product]=product></app-product>
-    </div>
-  </div>
-
 </div>
