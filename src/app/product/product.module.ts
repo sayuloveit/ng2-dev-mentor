@@ -14,6 +14,9 @@ import { ProductContainerComponent } from './components/product-container/produc
 import { SortProductsPipe } from './pipes/sort-products/sort-products.pipe';
 import { FilterProductsPipe } from './pipes/filter-products/filter-products.pipe';
 
+// service
+import { ProductService } from './services/product/product.service';
+
 
 @NgModule({
   imports: [
@@ -32,6 +35,9 @@ import { FilterProductsPipe } from './pipes/filter-products/filter-products.pipe
   ],
   exports: [
     ProductContainerComponent,
+  ],
+  providers: [
+    ProductService
   ]
 })
 export class ProductModule { }
