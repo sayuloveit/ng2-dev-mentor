@@ -1,5 +1,7 @@
 <div class="container">
 
+  <app-order-form (orderData)="onOrder($event)"></app-order-form>
+
   <app-product-search (search)="onFilter($event)"></app-product-search>
 
   <app-product-sort *ngFor="let sortProperty of ['price', 'name']"

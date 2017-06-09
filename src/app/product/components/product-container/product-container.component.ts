@@ -45,4 +45,8 @@ export class ProductContainerComponent implements OnInit, OnDestroy {
       property: sortBy
     }
   }
+
+  onOrder(orderData) {
+    console.log(orderData);
+  }
 }

@@ -10,6 +10,7 @@ import { ProductTagComponent } from './components/product-tag/product-tag.compon
 import { ProductSearchComponent } from './components/product-search/product-search.component';
 import { ProductSortComponent } from './components/product-sort/product-sort.component';
 import { ProductContainerComponent } from './components/product-container/product-container.component';
+import { OrderFormComponent } from './components/order-form/order-form.component';
 
 // pipes
 import { SortProductsPipe } from './pipes/sort-products/sort-products.pipe';
@@ -32,8 +33,9 @@ import { ProductService } from './services/product/product.service';
     ProductSearchComponent,
     ProductSortComponent,
     ProductContainerComponent,
+    OrderFormComponent,
     SortProductsPipe,
-    FilterProductsPipe
+    FilterProductsPipe,
   ],
   exports: [
     ProductContainerComponent,
