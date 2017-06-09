@@ -4,7 +4,8 @@
   <span class="label label-default">{{ product.price | currency:'EUR':true }}</span>
 </h4>
 
-<p class="list-group-item-text">{{ product.description }}</p>
+<img class="list-group-item-text" [src]="product.imageUrl"/>
+
 <div *ngIf="product.tagters">
   <span class="label label-primary" *ngFor="let tag of product.tags">
     <app-product-tag [tag]="tag"></app-product-tag>

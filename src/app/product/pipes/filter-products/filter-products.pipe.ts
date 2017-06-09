@@ -5,16 +5,21 @@ import { Pipe, PipeTransform } from '@angular/core';
 })
 export class FilterProductsPipe implements PipeTransform {
 
-   transform(items: any[], predicate: string): any[] {
-      return items.filter(item => {
-        const values = getValues(item)
-          .map(String)
-          .map(val => val.toLowerCase());
+  transform(items: any[], predicate: string): any[] {
 
-
-        return values.some(value => value.includes(predicate.toLowerCase()));
-      });
+    if (!items) {
+      return [];
     }
+
+    return items.filter(item => {
+      const values = getValues(item)
+        .map(String)
+        .map(val => val.toLowerCase());
+
+
+      return values.some(value => value.includes(predicate.toLowerCase()));
+    });
+  }
 
 }
 

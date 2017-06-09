@@ -1,6 +1,6 @@
 interface IProduct {
     name: string;
-    description: string;
+    imageUrl: string;
     price: number;
     promoted?: boolean;
     tags?: string[];
