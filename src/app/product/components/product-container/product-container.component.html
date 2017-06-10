@@ -1,14 +1,1 @@
-<div class="container">
-
-  <app-order-form (orderData)="onOrder($event)"></app-order-form>
-
-  <app-product-search (search)="onFilter($event)"></app-product-search>
-
-  <app-product-sort *ngFor="let sortProperty of ['price', 'name']"
-      [property]="sortProperty" 
-      [sort]="sort"
-      (sortChange)="onSort($event)">
-  </app-product-sort>
-
-  <app-product-list [products]="products | filterProducts:predicate | sortProducts:sort"></app-product-list>
-</div>
+<router-outlet name="product"></router-outlet>

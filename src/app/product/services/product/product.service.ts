@@ -15,7 +15,13 @@ export class ProductService {
   getProducts(): Observable<IProduct[]> {
     return this._http.get('https://shining-torch-4509.firebaseio.com/products.json')
               .retryWhen(error => error.delay(1000).take(5))
-              .map(response => (<any>Object).values(response.json()));
+              .map(response => (<any>Object).values(response.json()))
+              .map((products: IProduct[]) => {
+                  return products.map((product, index) => {
+                    product.id = index + 1;
+                    return product;
+                  });
+              });
   }
 
 }
